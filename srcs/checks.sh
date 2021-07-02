@@ -5,7 +5,7 @@ checks()
 printf "${purple}LIBC FONCTIONS :\n"
 part1=("memset" "bzero" "memcpy" "memccpy" "memmove" "memchr" "strlen" "isalpha" "isdigit" "isalnum" "isascii" "isprint" "toupper" "tolower" "strchr" "strrchr" "strncmp" "strlcpy" "strlcat" "strnstr" "atoi")
 for file in ${part1[@]} ; do
-	[ -f "$CUR_DIR/$DIR/ft_${file}.c" ] && { check_cheat "all"; check_compil; printf "\n"; }
+	[ -f "$CUR_DIR/$DIR/ft_${file}.c" ] && { check_cheat "all"; check_compil; printf "\n${white}"; }
 done
 
 part1_bis=("calloc" "strdup")

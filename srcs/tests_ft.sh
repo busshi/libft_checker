@@ -4,7 +4,7 @@
 diff_tests()
 {
 dif=$( diff "$CUR_DIR/srcs/tests/$file/test.$testing" "$CUR_DIR/temp/$file/result.$testing" )
-[ -n "$dif" ] && { printf "❌"; wrong=$(( $wrong + 1 )); } || printf "${green}√"
+[ -n "$dif" ] && { printf "❌"; wrong=$(( $wrong + 1 )); } || printf "${green}√${white}"
 }
 
 
@@ -13,7 +13,7 @@ print_grade()
 grade=$( echo "$max - $wrong" | bc )
 [ $grade -eq $max ] && { res_color="${green}"; txt="[ OK ]"; } || { res_color="${red}"; txt="[ KO ]"; fail=$(( $fail + 1 )); }
 max=$( echo "$max" | rev | cut -c-2 | rev )
-printf "${res_color}\033[85G${grade}\033[88G/ ${max}\033[100G${txt}"
+printf "${res_color}\033[85G${grade}\033[88G/ ${max}\033[100G${txt}${white}"
 }
 
 

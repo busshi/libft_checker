@@ -63,7 +63,7 @@ file_error=0
 for name in ${bonus[@]} ; do
         [ ! -f "$DIR/ft_${name}.c" ] && { printf "${red} ft_$name.c"; file_error=$(( $file_error + 1 )); }
 done
-[ $file_error -eq 0 ] && printf "${green} √"
+[ $file_error -eq 0 ] && printf "${green} √${white}"
 
 
 ### MAKEFILE CHECK
@@ -104,28 +104,31 @@ checks
 
 
 ### PRINT ERRORS
+cat "$CUR_DIR/error.txt"
 
-cd $CUR_DIR
-check_error=$( cat "error.txt" )
-if [ "$check_error" != "" ] ; then
-	printf "${orange}\nPrint generated errors during tests (y/n) ? ${white}"
-	read
-	[ "$REPLY" = "o" -o "$REPLY" = "y" ] && cat "$CUR_DIR/error.txt"
-fi
+#cd $CUR_DIR
+#check_error=$( cat "error.txt" )
+#if [ "$check_error" != "" ] ; then
+#	printf "${orange}\nPrint generated errors during tests (y/n) ? ${white}"
+#	read
+#	[ "$REPLY" = "o" -o "$REPLY" = "y" ] && cat "$CUR_DIR/error.txt"
+#fi
 
 
 
 ### CLEANING TEMPORARY FILES
+rm -f "${CUR_DIR}/libft.a"
+[ $fail -eq 0 ] && { rm -rf ${error} "${CUR_DIR}/temp"; exit 0; } || exit 1 
 
-if [ $fail -gt 0 ] ; then
-	printf "${orange}\nKeep temporary files ? (y/n) ${white}"
-	read
-	[ ! "$REPLY" = "o" -a ! "$REPLY" = "y" ] && rm -rf temp error.txt
-else
-	rm -rf error.txt temp
-fi
+#if [ $fail -gt 0 ] ; then
+#	printf "${orange}\nKeep temporary files ? (y/n) ${white}"
+#	read
+#	[ ! "$REPLY" = "o" -a ! "$REPLY" = "y" ] && rm -rf temp error.txt
+#else
+#	rm -rf error.txt temp
+#fi
 
-rm -rf libft.a
+#rm -rf libft.a
 
 
 exit 0
