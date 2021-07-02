@@ -21,8 +21,8 @@ DIR="../"
 CUR_DIR=$PWD
 error="$CUR_DIR/error.txt"
 
-echo "cur_dir: $CUR_DIR"
-echo "pwd: $PWD"
+
+echo $(ls -lRa)
 
 ### SOURCES FILES
 
