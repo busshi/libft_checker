@@ -18,10 +18,11 @@ grey="\e[1;30m"
 
 DIR="../"
 
-CUR_DIR=$( pwd )
+CUR_DIR=$PWD
 error="$CUR_DIR/error.txt"
 
-
+echo "cur_dir: $CUR_DIR"
+echo "pwd: $PWD"
 
 ### SOURCES FILES
 
