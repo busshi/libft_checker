@@ -1,4 +1,4 @@
-#include "../../../../libft/libft.h"
+#include "../../../../libft.h"
 #include <stdio.h>
 
 void	check(char const *s, char c)
@@ -11,10 +11,8 @@ void	check(char const *s, char c)
 	while (res[i])
 	{
 		printf("%s\n", res[i]);
-	//	free(res[i]);
 		i++;
 	}
-	//free(res);
 }
 
 int	main(int ac, char **av)

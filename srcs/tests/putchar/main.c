@@ -1,4 +1,4 @@
-#include "../../../../libft/libft.h"
+#include "../../../../libft.h"
 
 
 void	check(int start, int end)

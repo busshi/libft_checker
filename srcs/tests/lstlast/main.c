@@ -1,4 +1,4 @@
-#include "../../../../libft/libft.h"
+#include "../../../../libft.h"
 #include <stdio.h>
 
 void	ft_lstadd_back(t_list **alst, t_list *new)

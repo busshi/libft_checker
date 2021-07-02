@@ -1,4 +1,4 @@
-#include "../../../../libft/libft.h"
+#include "../../../../libft.h"
 #include <string.h>
 
 void	check(char *str)

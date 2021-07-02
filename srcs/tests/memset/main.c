@@ -1,4 +1,4 @@
-#include "../../../../libft/libft.h"
+#include "../../../../libft.h"
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
@@ -33,10 +33,5 @@ int		main(int ac, char **av)
                 check(mem, ' ', 10, mem_size);
         else if (agv == 5)
                 check(mem, '\n', 19, mem_size);
-	/*else if (agv == 6)
-	{
-		mem = NULL;
-		check(mem, '!', 10, mem_size);
-	}*/
 	return (0);
 }

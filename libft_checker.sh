@@ -16,7 +16,7 @@ grey="\e[1;30m"
 
 ### FOLDER VARIABLES
 
-DIR="../libft"
+DIR="../"
 
 CUR_DIR=$( pwd )
 error="$CUR_DIR/error.txt"

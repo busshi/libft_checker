@@ -1,4 +1,4 @@
-#include "../../../../libft/libft.h"
+#include "../../../../libft.h"
 #include <stdio.h>
 
 void	check(const char *haystack, const char *needle, size_t len)
