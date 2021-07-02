@@ -81,7 +81,7 @@ printf "${white}\n===> File name :"
 
 printf "${white}\n===> Library compilation :"
 [ ! -f "../libft.a" ]  && { printf " ❌\n"; exit 1; } || printf "${green} √\n"
-lib_cpy=$( cp "../libft.a" . 2>> $error && make fclean 2>> $error )
+lib_cpy=$( cp "../libft.a" . 2>> $error && make fclean -C $DIR 2>> $error )
 
 
 ### PAUSE
@@ -103,20 +103,22 @@ checks
 
 
 ### PRINT ERRORS
-cat "$CUR_DIR/error.txt"
+#cat "$CUR_DIR/error.txt"
 
 #cd $CUR_DIR
-#check_error=$( cat "error.txt" )
-#if [ "$check_error" != "" ] ; then
+check_error=$( cat $error )
+if [ "$check_error" != "" ] ; then
+	printf "${red}\n\n⚠️   Errors generated during tests:${white}\n\n"
+	cat "$error"
 #	printf "${orange}\nPrint generated errors during tests (y/n) ? ${white}"
 #	read
 #	[ "$REPLY" = "o" -o "$REPLY" = "y" ] && cat "$CUR_DIR/error.txt"
-#fi
+fi
 
 
 
 ### CLEANING TEMPORARY FILES
-rm -f "${CUR_DIR}/libft.a"
+rm -f "${CUR_DIR}/libft.a" # && make fclean -C $DIR
 [ $fail -eq 0 ] && { rm -rf ${error} "${CUR_DIR}/temp"; exit 0; } || exit 1 
 
 #if [ $fail -gt 0 ] ; then
