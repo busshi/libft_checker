@@ -22,8 +22,6 @@ CUR_DIR=$PWD
 error="$CUR_DIR/error.txt"
 
 
-echo $(ls -lRa)
-
 ### SOURCES FILES
 
 source "$CUR_DIR/srcs/cheat.sh"

@@ -81,7 +81,7 @@ done
 printf "${white}\n===> Relink :"
 link=$( cd $DIR && make re 2>> $error )
 relink=$( cd $DIR && make 2>> $error )
-if [ "$relink" = "make: « libft.a » est à jour." -o "$relink" = "make: rien à faire pour « all »." -o "$relink" = "make: « libft.a » is up-to-date." -o "$relink" = "make: nothing to be done for « all »." -o "$relink" = "make: Nothing to be done for \`all'." -o "$relink" = "make: \`libft.a' is up to date." ] ; then
+if [ "$relink" = "make: « libft.a » est à jour." -o "$relink" = "make: rien à faire pour « all »." -o "$relink" = "make: « libft.a » is up-to-date." -o "$relink" = "make: nothing to be done for « all »." -o "$relink" = "make: Nothing to be done for \`all'." -o "$relink" = "make: \`libft.a' is up to date." -o "$relink" = "make[1]: Nothing to be done for \`all'." ] ; then
 	printf "${green} No relink"
 else
 	printf "${red} $relink"
