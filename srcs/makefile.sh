@@ -30,7 +30,7 @@ printf "${white}\n===> Rules checking :"
 
 ### Make
 
-make_libft=$( cd $DIR && make 2> $error )
+make_libft=$( make -C $DIR 2> $error )
 pb=0
 for objet in ${liste[@]} ; do
 	[ ! -f "$DIR/ft_${objet}.o" ] && pb=$(( $pb + 1 ))
@@ -42,7 +42,7 @@ done
 
 ### Make clean
 
-clean=$( cd $DIR && make clean 2>> $error )
+clean=$( make clean -C $DIR 2>> $error )
 pb=0
 for objet in ${liste[@]} ; do
         [ -f "$DIR/ft_${objet}.o" ] && pb=$(( $pb + 1 ))
@@ -54,7 +54,7 @@ done
 
 ### Make bonus
 
-make_bonus=$( cd $DIR && make bonus 2>> $error )
+make_bonus=$( make bonus -C $DIR 2>> $error )
 pb=0
 for objet in ${bonus[@]} ; do
         [ ! -f "$DIR/ft_${objet}.o" ] && pb=$(( $pb + 1 ))
@@ -66,7 +66,7 @@ done
 
 ### Make fclean
 
-cleanf=$( cd $DIR && make fclean 2>> $error )
+cleanf=$( make -C $DIR fclean 2>> $error )
 pb=0
 for objet in ${liste[@]} ; do
         [ -f "$DIR/ft_${objet}.o" ] && pb=$(( $pb + 1 ))
