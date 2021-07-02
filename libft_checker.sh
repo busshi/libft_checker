@@ -80,8 +80,8 @@ printf "${white}\n===> File name :"
 ### LIBRARY COMPILATION
 
 printf "${white}\n===> Library compilation :"
-[ ! -f "$DIR/libft.a" ] && { printf " ❌\n"; exit 1; } || printf "${green} √\n"
-lib_cpy=$( cd $DIR && cp "libft.a" "../libft_checker/libft.a" 2>> $error && make fclean 2>> $error )
+[ ! -f "../libft.a" ]  && { printf " ❌\n"; exit 1; } || printf "${green} √\n"
+lib_cpy=$( cp "../libft.a" . 2>> $error && make fclean 2>> $error )
 
 
 ### PAUSE
