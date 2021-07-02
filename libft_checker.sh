@@ -74,14 +74,14 @@ printf "${white}\n===> File name :"
 
 [ -f "$DIR/Makefile" ] && Makefile="Makefile"
 [ -f "$DIR/makefile" ] && Makefile="makefile"
-[ -n "$Makefile" ] && { printf "${green} √"; makefile; } || { printf " ❌\n"; exit; }
+[ -n "$Makefile" ] && { printf "${green} √"; makefile; } || { printf " ❌\n"; exit 1; }
 
 
 
 ### LIBRARY COMPILATION
 
 printf "${white}\n===> Library compilation :"
-[ ! -f "$DIR/libft.a" ] && { printf " ❌\n"; exit; } || printf "${green} √\n"
+[ ! -f "$DIR/libft.a" ] && { printf " ❌\n"; exit 1; } || printf "${green} √\n"
 lib_cpy=$( cd $DIR && cp "libft.a" "../libft_checker/libft.a" 2>> $error && make fclean 2>> $error )
 
 
