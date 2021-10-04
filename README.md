@@ -1,5 +1,4 @@
-#      LIBFT_CHECKER
-#           2020
+# LIBFT_CHECKER
 
 
 Check functions of your Libft for 42 School project.
