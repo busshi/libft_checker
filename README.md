@@ -6,7 +6,10 @@ Check functions of your Libft for 42 School project.
 Clone this in the root folder of the libft.
 OR you can edit the variable $DIR in the script...
 
-Go into the libft_checker directory and run bash libft_checker.sh
+Go into the libft_checker directory and run:
+```bash
+/bin/ bash libft_checker.sh
+```
 
 
 
