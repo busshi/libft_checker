@@ -8,7 +8,7 @@ OR you can edit the variable $DIR in the script...
 
 Go into the libft_checker directory and run:
 ```bash
-/bin/ bash libft_checker.sh
+/bin/bash libft_checker.sh
 ```
 
 
